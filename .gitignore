@@ -5,6 +5,7 @@ node_modules/
 data/
 logs/
 tools/
+caddy/
 circuit-research/
 *.pass
 *.keystore.json

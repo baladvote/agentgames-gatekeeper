@@ -1,0 +1,25 @@
+[Unit]
+Description=Tukang Vote Proof Gatekeeper agent
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+WorkingDirectory=/root/apps/agentgames-gatekeeper
+EnvironmentFile=/root/.agentgames/agent.env
+Environment=NODE_BINARY=/root/apps/runtime/node22/bin/node
+ExecStart=/bin/sh /root/apps/agentgames-gatekeeper/scripts/start.sh
+Restart=on-failure
+RestartPreventExitStatus=75
+RestartSec=3
+UMask=0077
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=read-only
+ReadWritePaths=/root/.agentgames/gatekeeper-data
+MemoryMax=320M
+TasksMax=40
+
+[Install]
+WantedBy=multi-user.target

@@ -9,7 +9,7 @@
   },
   "scripts": {
     "test": "node --test test/*.test.mjs",
-    "start": "node src/main.mjs"
+    "start": "sh scripts/start.sh"
   },
   "dependencies": {
     "ffjavascript": "0.3.1",
